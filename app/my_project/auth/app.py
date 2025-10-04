@@ -1,5 +1,5 @@
 from flask import Flask
-from config import Config 
+from .config import Config 
 from controller.objects_controller import create_objects_controller
 from controller.users_controller import create_users_controller
 from controller.notifications_controller import create_notifications_controller
@@ -23,4 +23,5 @@ sensor_notification_controller = create_sensor_notification_controller(mysql)
 app.register_blueprint(sensor_notification_controller)
 
 if __name__ == '__main__':
+
     app.run(debug=True)
