@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from services.objects_service import ObjectsService
+from ..services.objects_service import ObjectsService
 
 def create_objects_controller(mysql):
     objects_controller = Blueprint('objects', __name__)
@@ -43,4 +43,5 @@ def create_objects_controller(mysql):
         except Exception as e:
             return jsonify({"error": str(e)}), 500
         
+
     return objects_controller
