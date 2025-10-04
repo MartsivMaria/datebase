@@ -1,4 +1,4 @@
-from models.objects import Objects
+from ..models.objects import Objects
 
 class ObjectsDAO:
     def __init__(self, mysql):
@@ -30,4 +30,5 @@ class ObjectsDAO:
         cur = self.mysql.connection.cursor()
         cur.execute("DELETE FROM objects WHERE object_id = %s", (object_id,))
         self.mysql.connection.commit()
+
         cur.close()
